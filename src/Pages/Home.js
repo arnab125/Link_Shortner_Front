@@ -5,6 +5,7 @@ function Home() {
   const [url, setUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,6 +24,7 @@ function Home() {
           setErrorMessage(data.error);
         } else {
           setShortUrl(data.short_url);
+          setCopied(false); // reset copied state
         }
       })
       .catch((error) => {
@@ -31,9 +33,15 @@ function Home() {
       });
   };
 
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(`${process.env.REACT_APP_SERVER_URL}/${shortUrl}`);
+    setCopied(true);
+  };
+
+
   return (
     <div className="container">
-      <h1>Link Shortener</h1>
+      <h1>Link Shortener-SYLN</h1>
       <form onSubmit={handleSubmit}>
         <label className="form-label">
           URL:
@@ -58,7 +66,13 @@ function Home() {
           </a>
         </div>
       )}
-
+      <div>
+        {shortUrl && (
+          <button className="copy-button" onClick={handleCopyClick}>
+            {copied ? "Copied!" : "Copy"}
+          </button>
+        )}
+      </div>
       <p className="footer"><b>&copy; 2023 Arnab. All Rights Reserved.</b></p>
     </div>
   );
