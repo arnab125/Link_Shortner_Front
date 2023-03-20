@@ -32,12 +32,13 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Link Shortener</h1>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className="form-label">
           URL:
           <input
+            className="form-input"
             type="text"
             value={url}
             onChange={(event) => setUrl(event.target.value)}
@@ -45,15 +46,20 @@ function Home() {
         </label>
         <button type="submit">Create Short URL</button>
       </form>
-      {errorMessage && <div className="error">{errorMessage}</div>}
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
       {shortUrl && (
-        <div>
-          <strong>Short URL:</strong>{" "}
-          <a href={`${process.env.REACT_APP_SERVER_URL}/${shortUrl}`} target="_blank" rel="noreferrer">
+        <div className="short-url-container">
+          <label className="short-url-label">Short URL:</label>{" "}
+          <a
+            className="short-url-link"
+            href={`${process.env.REACT_APP_SERVER_URL}/${shortUrl}`}
+            target="_blank" rel="noreferrer">
           {`${process.env.REACT_APP_SERVER_URL}/${shortUrl}`} 
           </a>
         </div>
       )}
+
+      <p className="footer"><b>&copy; 2023 Arnab. All Rights Reserved.</b></p>
     </div>
   );
 }

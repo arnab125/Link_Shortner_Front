@@ -1,65 +1,162 @@
-/* Body styling */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-  }
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+form {
+  margin-top: 2rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-input {
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 500px;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.error-message {
+  color: red;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+.short-url-container {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.short-url-label {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.short-url-link {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.short-url-link:hover {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.footer {
+  margin-top: 200px;
   
-  /* Header styling */
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 90%;
   }
-  
-  header h1 {
-    margin: 0;
-    font-size: 32px;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
   }
-  
-  /* Input and button styling */
-  form {
-    margin-top: 20px;
-    text-align: center;
+
+  .form-label {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
   }
-  
-  input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    width: 300px;
-    margin-right: 10px;
+
+  .form-input {
+    font-size: 1.1rem;
   }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+
+  button[type="submit"] {
+    font-size: 1.1rem;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
   }
-  
-  button:hover {
-    background-color: #555;
+
+  .error-message {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
   }
-  
-  /* Response styling */
-  .response {
-    margin-top: 20px;
-    text-align: center;
+
+  .short-url-container {
+    margin-top: 1rem;
+    font-size: 1.25rem;
   }
-  
-  .response p {
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    width: 400px;
-    margin: 0 auto;
+
+  .short-url-label {
+    font-size: 1.1rem;
   }
-  
+
+  .short-url-link {
+    font-size: 1.1rem;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .form-label {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .form-input {
+    font-size: 1rem;
+  }
+
+  button[type="submit"] {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .error-message {
+    font-size: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .short-url-container {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .short-url-label {
+    font-size: 1rem;
+  }
+
+  .short-url-link {
+    font-size: 1rem;
+  }
+}
+
